@@ -1,27 +1,22 @@
-# Provectus
+Нужно используя верстку, полученную в первом пункте собрать SPA. Использовать Angular>=v.2+TS, либо React.
+Должно быть две страницы - Home(на макете) и Contact (переход при нажатии на ссылку 1).
+На странице Home блоки с описанием и изображением хот-догов (область 2) должны загружаться GET-запросом на URL https://formula-test-api.herokuapp.com/menu .
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+Формат:
 
-## Development server
+{
+  id: 1,
+  name: 'Name', 
+  description: 'Description', 
+  expirationDate: '01-30-1999',
+  backgroundURL: 'https://..../image.jpg'
+}
+Полученный с сервера ответ необходимо отфильтровать по expirationDate функцией, полученной в Level2_Javascript, и отрисовать их на странице Home.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+На странице Contact должны быть два input "Name" и "Email", textarea "Comment" и кнопка, при клике на которую данные формы отправляются на сервер. Дизайн на усмотрение разработчика. Данные отправлять POST-запросом на URL https://formula-test-api.herokuapp.com/contact в json-формате:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`{`
+  `"name": "name",`
+  `"email": "email",`
+  `"comment": "comment",`
+`}`
