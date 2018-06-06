@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+
+  .header__row {
+    display: flex;
+  }
+
+  .header__blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("./img/blockout.png") no-repeat center;
+    height: 175px;
+    width: 100%;
+  }
+
+  .header__inst {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font: {
+      family: "ProximaNova", sans-serif;
+      size: 16px;
+      weight: 700;
+    };
+    color: #ffffff;
+    background: url("./img/instagram.svg") no-repeat left center;
+    padding-left: 27px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
