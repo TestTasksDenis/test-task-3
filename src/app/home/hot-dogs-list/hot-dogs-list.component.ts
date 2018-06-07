@@ -8,14 +8,16 @@ import { HotDogsModel } from '../../shared/models/hot-dogs.model';
   styleUrls: ['./hot-dogs-list.component.scss']
 })
 export class HotDogsListComponent implements OnInit {
-
+  date = new Date();
   hotDogs: HotDogsModel[];
 
   constructor(private hotDogsService: HotDogsService) {}
 
   ngOnInit() {
     this.hotDogsService.getHotDogs().subscribe(hotDogs => {
-      this.hotDogs = hotDogs;
+      this.hotDogs = hotDogs.filter(item => {
+        return Date.parse(new Date(item.expirationDate).toISOString()) > Date.parse(this.date.toISOString());
+      });
     });
   }
 }
