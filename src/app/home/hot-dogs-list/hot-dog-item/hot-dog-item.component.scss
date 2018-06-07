@@ -1,0 +1,44 @@
+@import "../../../../libs/maledict/framework/mixins/grid";
+
+.hot-item {
+  @include grid();
+
+  .hot-item__section {
+    @include size(6);
+    display: flex;
+    align-items: center;
+
+    &.hot-item__section--text {
+      padding: 0 135px;
+      color: #555559;
+
+      h3 {
+        font: {
+          size: 24px;
+          weight: 700;
+        };
+        margin-bottom: 20px;
+        position: relative;
+
+        &:before {
+          content: '';
+          height: 2px;
+          width: 30px;
+          display: block;
+          background-color: #286782;
+          position: absolute;
+          top: 14px;
+          left: -50px;
+        }
+      }
+
+      p {
+        font: {
+          size: 18px;
+          weight: 300;
+        };
+        line-height: 24px;
+      }
+    }
+  }
+}
