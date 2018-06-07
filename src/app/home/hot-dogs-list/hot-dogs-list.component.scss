@@ -1,0 +1,7 @@
+.hot {
+  /deep/ app-hot-dog-item:nth-child(even) {
+    .hot-item__section--text {
+      order: 2;
+    }
+  }
+}

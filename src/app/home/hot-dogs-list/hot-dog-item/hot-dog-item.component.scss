@@ -7,6 +7,7 @@
     @include size(6);
     display: flex;
     align-items: center;
+    order: 1;
 
     &.hot-item__section--text {
       padding: 0 135px;

@@ -1,3 +1,3 @@
 <section class="hot">
-  <app-hot-dog-item [title]="'Gormet All Beef Hotdogs'" [desc]="'Gormet All Beef Hotdogs'" [img]="'./assets/img/pages/home/hot-01.png'"></app-hot-dog-item>
+  <app-hot-dog-item *ngFor="let hotDog of hotDogs" [title]="hotDog.name" [desc]="hotDog.description" [img]="hotDog.backgroundURL"></app-hot-dog-item>
 </section>

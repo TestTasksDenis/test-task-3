@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HotDogsService } from '../../shared/services/hot-dogs.service';
+import { HotDogsModel } from '../../shared/models/hot-dogs.model';
 
 @Component({
   selector: 'app-hot-dogs-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotDogsListComponent implements OnInit {
 
-  constructor() { }
+  hotDogs: HotDogsModel[];
+
+  constructor(private hotDogsService: HotDogsService) {}
 
   ngOnInit() {
+    this.hotDogsService.getHotDogs().subscribe(hotDogs => {
+      this.hotDogs = hotDogs;
+    });
   }
-
 }

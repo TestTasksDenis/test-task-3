@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+import { HotDogsService } from './shared/services/hot-dogs.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app.routes.module';
@@ -18,9 +21,12 @@ import { HotDogItemComponent } from './home/hot-dogs-list/hot-dog-item/hot-dog-i
   imports: [
     BrowserModule,
     AppRoutesModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HotDogsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
