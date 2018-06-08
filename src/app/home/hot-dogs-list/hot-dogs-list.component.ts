@@ -15,7 +15,6 @@ export class HotDogsListComponent implements OnInit {
 
   ngOnInit() {
     this.hotDogsService.getHotDogs().subscribe(hotDogs => {
-      console.log(hotDogs);
       this.hotDogs = hotDogs.filter(item => {
         return Date.parse(new Date(item.expirationDate).toISOString()) > Date.parse(this.date.toISOString());
       });

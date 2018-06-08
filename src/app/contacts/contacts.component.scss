@@ -9,7 +9,6 @@
 
     text-align: center;
     color: #555559;
-    padding: 0 190px;
     margin-bottom: 85px;
   }
 
@@ -81,5 +80,19 @@
         padding: 15px 0;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contacts .contacts__form .form .form__elem {
+    flex-direction: column;
+  }
+
+  .contacts .contacts__form .form .form__elem label {
+    margin-bottom: 8px;
+  }
+
+  .contacts .contacts__form .form .form__elem .form__field {
+    width: 100%;
   }
 }
