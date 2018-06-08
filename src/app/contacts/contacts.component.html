@@ -1,0 +1,30 @@
+<div class="contacts">
+  <h1>Contacts</h1>
+  <div class="contacts__form">
+    <form class="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form__elem">
+        <label for="name">Your name</label>
+        <div class="form__field">
+          <input id="name" name="name" formControlName="name" class="form__input">
+        </div>
+      </div>
+      <div class="form__elem">
+        <label for="email">Email</label>
+        <div class="form__field">
+          <input id="email" name="email" formControlName="email" class="form__input">
+          <div class="form__field-error" *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched">Invalid Email</div>
+        </div>
+      </div>
+      <div class="form__elem">
+        <label for="comment">Comment</label>
+        <div class="form__field">
+          <textarea id="comment" name="comment" formControlName="comment" class="form__textarea"></textarea>
+        </div>
+      </div>
+      <div class="form__elem form__elem--submit">
+        <input type="submit" value="Contact us" [disabled]="contactForm.invalid" class="btn btn--blue">
+      </div>
+      <div class="form__message" [hidden]="isSuccess">Your message has been sent!</div>
+    </form>
+  </div>
+</div>
